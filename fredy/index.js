@@ -157,6 +157,8 @@ let closemenu = ()=> {
 //https://api.giphy.com/v1/gifs/search?api_key=9q0Co8y92A1puokhTuMaeKeO3Y5bsveq&limit=12&q=perro
 
 let buscar = async () => {
+  contenedor = document.getElementById("div2")
+  contenedor.style.display = "block"
   buscador = input.value; // lo que busca el usuario
   resultados.innerText = buscador;
   try {
