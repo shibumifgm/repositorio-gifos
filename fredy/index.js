@@ -67,7 +67,12 @@ let mododiurno = ()=>{
   lis = document.getElementsByTagName("li")
  for (let i = 0; i < lis.length; i++) {
    const li = lis[i];
-   li.style.color = '#572EE5';  
+   if (window.matchMedia("(min-width: 800px)").matches) {
+    li.style.color = "#572EE5";
+  } else {
+    li.style.color = "white";
+  }
+    
  }
   ps = document.getElementsByTagName("p")
  for (let i = 0; i < ps.length; i++) {
