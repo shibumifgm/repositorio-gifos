@@ -1,0 +1,31 @@
+    #divmisgifos{
+        display: block;
+        
+    
+        img#icongifos{
+        display: block;
+        margin: auto;
+    
+    }
+    .misgifos{
+        font-size: 25px;
+color: #572EE5;
+text-align: center;
+line-height: 30px;
+    }
+}
+    #gridmisgifos{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 29px;
+        .ps{
+            background-color: red;
+            height: 100px;
+            width: 100px;
+        }
+      
+    }
+    
+    
+

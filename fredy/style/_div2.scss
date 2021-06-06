@@ -1,0 +1,12 @@
+.res{
+    
+    background-color: red;
+    width: 100px;
+    height: 100px;
+
+}
+#contenedorderespuesta{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}

@@ -1,0 +1,33 @@
+
+#divfavorito{
+    display: block;}
+
+    img#iconfavorito{
+    display: block;
+    margin: auto;
+
+}
+.titulos{
+    margin: auto;
+}
+.favoritos{
+    font-size: 25px;
+color: #572EE5;
+text-align: center;
+line-height: 30px;
+}
+#grid1{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 29px;
+    .ps{
+        background-color: red;
+        height: 100px;
+        width: 100px;
+    }
+  
+}
+.botonvermas {
+    @extend %botones
+}
