@@ -385,6 +385,10 @@ img#pelicula {
   margin: 10px;
 }
 
+#div2 {
+  display: none;
+}
+
 .res {
   background-color: red;
   width: 100px;
