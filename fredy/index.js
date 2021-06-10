@@ -4,8 +4,8 @@ let creatugifo = document.getElementById("creatugifo");
 let imagenHover = new Image();
 imagenHover.src = "../miguel/assets/CTA-crear-gifo-hover.svg";
 let imagenNormal = creatugifo.firstElementChild;
-let imagen3= new Image ();
-imagen3.src = "../miguel/assets/CTA-crear-gifo-active.svg"
+//let imagen3= new Image ();
+//imagen3.src = "../miguel/assets/CTA-crear-gifo-active.svg"
 
 let cambio = () => creatugifo.replaceChild(imagenHover, imagenNormal);
 let cambio2 = () => creatugifo.replaceChild(imagenNormal, imagenHover);
@@ -124,7 +124,7 @@ let mododiurno = ()=>{
 
   let abrir = document.getElementById("open")
   let cerrar= new Image ();
-cerrar.src = "./imagenes/close.svg"
+cerrar.src = "../miguel/assets/close.svg"
 cerrar.setAttribute("id","close")
    let header = document.getElementById("header")
   
@@ -169,7 +169,7 @@ let buscar = async () => {
   try {
     const res = await fetch(
       `${giphysearchurl}${api_key}&lang=es&offset=99&rating=pg-13,r&limit=12&q=${buscador}`
-    ) // pendiente sacar el &q a constante busqueda del buscador shaaaaa
+    )
       .then((res) => res.json())
       .then((responses) => {
         responses.data.forEach(function (item) {
@@ -194,10 +194,10 @@ let links = [];
 let resultados = document.getElementById("resultados");
 const api_key = "?api_key=9q0Co8y92A1puokhTuMaeKeO3Y5bsveq";
 const giphysearchurl = "http://api.giphy.com/v1/gifs/search";
-let input = document.getElementById("buscador");
-let imagen_buscar = document.getElementById("imagen_buscar");
-console.log(imagen_buscar)
-imagen_buscar.addEventListener("click", buscar);
+let input = document.getElementById("buscar");
+let imagenbuscar = document.getElementById("imagen_buscar");
+
+
 input.addEventListener("keyup", function (e){
   var keycode = e.keyCode || e.which; 
   if (keycode == 13) {
@@ -205,3 +205,55 @@ input.addEventListener("keyup", function (e){
   }
 })
 
+// autocompletar 
+//http://api.giphy.com/v1/gifs/search/tags?api_key=9q0Co8y92A1puokhTuMaeKeO3Y5bsveq&limit=4&q=perro
+const giphyautocompleteurl = "http://api.giphy.com/v1/gifs/search/tags"
+let divbuscador = document.getElementById("buscador")
+
+let autocompletar = async () => {
+  
+  newsbucador = ' <select id="sugerencias"name="select"><option value=""></option><option value="value2">Value 2</option><option value="value3">Value 3</option><option value="value4">Value 4</option></select> <input type="image" src="fredy/imagenes/icon-search.svg" class="imagen_buscar" id="imagen_buscar">'
+  
+  divbuscador.innerHTML = newsbucador
+  sugerencias = document.getElementById("sugerencias")
+  
+  //divbuscador.removeChild(input)
+  
+
+  // contenedor = document.getElementById("div2")
+  // contenedor.style.display = "block"
+   buscador = input.value; // lo que busca el usuario
+  // resultados.innerText = buscador;
+  try {
+    const res = await fetch(`${giphyautocompleteurl}${api_key}&limit=4&q=${buscador}`) 
+      .then((res) => res.json())
+      
+      .then((res) => {
+        res.data.forEach(function (item) {
+          if (sugerencia.indexOf(item.name) == -1) {
+            sugerencia.push(item.name);// sugerencias en un array x4
+
+            
+          }
+          let opciones = document.querySelectorAll("option")
+          console.log(opciones)
+          for (let i = 0; i < opciones.length; i++) {
+            //opciones[i].setAttribute("value", sugerencia[i]);
+          opciones[i].innerText = sugerencia[i]
+          }
+
+        })
+      
+    }
+    )
+  } 
+  catch(error) {
+    console.error(error);
+  }
+}
+// autocompletar()
+
+imagen_buscar.addEventListener("click", autocompletar);
+//let opciones = document.querySelectorAll("option")
+
+sugerencia = []

@@ -197,12 +197,13 @@ h1 .gifos {
   margin: auto;
 }
 
-.buscador {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+#buscador {
+  display: block;
+  text-align: center;
   margin-top: 20px;
-  margin: auto;
+}
+
+#buscar {
   background: #FFFFFF;
   border: 1px solid #572EE5;
   border-radius: 27px;
@@ -212,19 +213,13 @@ h1 .gifos {
   text-indent: 54px;
 }
 
-.buscar {
-  border: none;
-  width: 540px;
-  height: 40px;
-  margin: 5px 10px;
-}
-
 .imagen_buscar {
+  position: relative;
   width: 20px;
   height: 20px;
   border: 0px;
-  margin-top: 17px;
-  margin-right: 15px;
+  margin-top: 10px;
+  margin-left: -41px;
 }
 
 h2 {
@@ -243,6 +238,16 @@ p {
   text-align: center;
   line-height: 25px;
   margin-top: 30px;
+}
+
+#sugerencias {
+  background: #FFFFFF;
+  border: 1px solid #572EE5;
+  border-radius: 27px;
+  border-radius: 27px;
+  width: 550px;
+  height: 55px;
+  text-indent: 54px;
 }
 
 @media screen and (min-width: 800px) {
@@ -401,5 +406,34 @@ img#pelicula {
       grid-template-columns: 1fr 1fr 1fr 1fr;
   -ms-grid-rows: 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr;
+}
+
+.contenedorvermas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.vermas {
+  margin: 20px 0;
+  font-family: "open-bold";
+  font-size: 13px;
+  color: #572EE5;
+  letter-spacing: 0;
+  text-align: center;
+  border: 1px solid #572EE5;
+  border-radius: 25px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 127px;
+  height: 50px;
+}
+
+#resultados {
+  margin: 20px;
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=style.css.map */
